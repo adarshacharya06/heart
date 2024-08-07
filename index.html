@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart trail animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div>
+  <h1>heart&#128151</h1>
+</div>
+
+<script>
+        const bodyel=document.querySelector("body")
+
+        bodyel.addEventListener("mousemove",(event)=>{
+            const xpos=event.offsetX;
+            const ypos=event.offsetY;
+            const spanel=document.createElement("span");
+            spanel.style.left=xpos+"px";
+            spanel.style.top=ypos+"px";
+            const size=Math.random()*100;
+            spanel.style.width=size+"px";
+            spanel.style.height=size+"px";
+            bodyel.appendChild(spanel);
+            setTimeout(()=>{
+                spanel.remove();
+            },3000);
+        });
+    </script>
+</body>
+</html>
